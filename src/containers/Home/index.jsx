@@ -38,8 +38,10 @@ const Home = () => {
     setTodos(updatedTodos);
   };
 
-  const filteredTodos = todos.filter((todo) =>
-    todo.status.toLowerCase().includes(filterStatus.toLowerCase())
+  const filteredTodos = todos.filter(
+    (todo) =>
+      todo.status &&
+      todo.status.toLowerCase().includes(filterStatus.toLowerCase())
   );
 
   const handleFilterChange = (event) => {
