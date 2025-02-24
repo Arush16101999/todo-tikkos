@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { CssBaseline } from "@mui/material";
+import { Toaster } from "react-hot-toast";
+import AddTodo from "./containers/AddTodo";
+import Home from "./containers/Home";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Toaster position="bottom-right" reverseOrder={false} />
+      <CssBaseline />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" Component={Home} />
+          <Route path="/addTodo" Component={AddTodo} />
+          <Route path="/updateTodo/:id" Component={AddTodo} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
